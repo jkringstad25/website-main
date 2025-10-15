@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- META TAGS -->
+        <meta charset="utf-8">
+        <meta name="author" content="AtypicalThemes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+
+        <!-- WEBSITE TITLE & DESCRIPTION -->
+        <title>STRIDER - A Game Studio Template</title>
+        <meta name="description" content="Showcase your pc games in the best light">
+        <meta name="keywords" content="game studio, games, indie, studio, video game,">
+
+        <!-- META TAGS FOR SOCIAL MEDIA -->
+        <meta property="og:site_name" content="Strider" /><!-- The name of your website or brand -->
+        
+        <meta property="og:site" content="https://atypicalthemes.com/portfolio/strider_demo/index.html" /><!-- Your full website URL (often the homepage) -->
+        
+        <meta property="og:title" content="Strider game-studio template"/> <!-- The title of the page/post (shows as the headline in social previews) -->
+        
+        <meta property="og:description" content="Showcase your pc games in the best light" /><!-- A short description of the page (appears below the title in previews) -->
+        
+        <meta property="og:image" content="images/preview.webp" /><!-- A direct link to the preview image (should be JPG or PNG, minimum 1200x630px recommended) -->
+        
+        <meta property="og:url" content="https://atypicalthemes.com/" /><!-- The canonical URL of the page (where the link will go when clicked) -->
+        
+        <meta property="og:type" content="article" /><!-- Type of content: usually 'article' for blog posts or 'website' for homepages -->
+
+
+        <!-- Favicon and Apple Icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.webp">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.webp">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.webp">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.webp">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.webp">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.webp">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.webp">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.webp">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.webp">
+        <link rel="icon" type="image/webp" sizes="192x192"  href="images/favicon/android-icon-192x192.webp">
+        <link rel="icon" type="image/webp" sizes="32x32" href="images/favicon/favicon-32x32.webp">
+        <link rel="icon" type="image/webp" sizes="96x96" href="images/favicon/favicon-96x96.webp">
+        <link rel="icon" type="image/webp" sizes="16x16" href="images/favicon/favicon-16x16.webp">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:ital,opsz@0,14..32;1,14..32&display=swap&family=Raleway:wght@100;200&display=swap" rel="stylesheet">
+        
+        <!-- STYLES -->
+        <!-- Bootstrap -->
+        <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+        <!-- Animations -->
+        <link rel="preload" href="css/animations.css" as="style" onload="this.rel='stylesheet'">
+        <!-- Lightbox -->
+        <link rel="preload" href="css/glightbox.min.css" as="style" onload="this.rel='stylesheet'">
+        <!-- Splide carousel-->
+        <link rel="preload" href="css/splide.min.css" as="style" onload="this.rel='stylesheet'">
+        <!-- Main Stylesheet -->
+        <link href="css/single.css" rel="stylesheet">
+    </head>
+    <body class="game-page">
+
+        <!-- Loading Screen -->
+        <div id="loader-wrapper" class="uppercase">
+            <div class="flex-wrapper">
+                <p class="loader-logo">Strider</p>
+                <div id="progress"></div>
+                <p class="loader-text">Loading</p>
+            </div>
+        </div>
+
+        <!-- /// Age Checker /// -->
+        <div id="age-checker-wrapper">
+            <div id="age-checker-overlay"></div>
+            <div class="container mt-5" id="age-checker">
+                <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">Age Verification</h4>
+                        <form id="age-form">
+                        <div class="mb-3">
+                            <label for="birthYear" class="form-label">Enter your birth year</label>
+                            <input type="number" class="form-control" id="birthYear" placeholder="e.g. 2005" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Verify</button>
+                        </form>
+                        <div id="result" class="mt-4 text-center fw-bold"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- //// HEADER //// -->
+        <header id="main-header">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <!-- Site Logo -->
+                    <a id="main-logo" class="navbar-brand uppercase" href="#">Strider</a>
+                    <!-- IMG Logo 
+                    <a href="#"><img src="images/company_logo.webp" id="main-logo" class="navbar-brand" alt="Site Logo"></a>
+                    -->
+
+                    <!-- Dropdown Button -->
+                    <button id="hamburger" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto capitalized">
+                        <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="#characters" class="nav-link">Characters</a></li>
+                        <li class="nav-item"><a href="#world" class="nav-link">World</a></li>
+                        <li class="nav-item"><a href="#cta" class="nav-link">Purchase</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        </header><!-- Header End -->
+
+        <!-- /// Cookie Management /// -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Cookie blocker message (shown when cookies are blocked) -->
+                <div id="policy-message" class=" " aria-live="polite" role="status">
+                <p>This message appears when cookies are blocked by the browser.</p>
+                <button type="button" id="close-policy-message" class="close" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Cookie notification bar -->
+                <div id="policy-bar" class="policy-notice-bar">
+                    <p>We use cookies for a better user experience. Please consult our <a href="privacy_policy.html" aria-label="open privacy policy page">Privacy Policy</a> for more info.</p>
+                    <div class="policy-bar-buttons">
+                        <button type="button" id="accept-button" class="uppercase">Accept All</button>
+                        <button type="button" id="reject-button" class="uppercase">Reject All</button>
+                        <button type="button" class="uppercase" data-bs-toggle="modal" data-bs-target="#policy-modal">Manage Cookies</button>
+                    </div>
+                    <button type="button" id="close-policy-bar" class="close" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                    <!-- Cookie Preferences Modal -->
+                    <div id="policy-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="privacy-options" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 id="privacy-options" class="modal-title capitalized">Cookie Preferences</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi eros, 
+                                        scelerisque vitae diam eu, malesuada.</p>
+                                    <div class="checkbox-wrapper">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="cpref-1" checked disabled>
+                                            <label class="form-check-label" for="cpref-1">Example cookie</label>
+                                            <p class="subtle">We use this cookies to improve user experience.</p>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="cpref-2">
+                                            <label class="form-check-label" for="cpref-2">Example cookie</label>
+                                            <p class="subtle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="cpref-3">
+                                            <label class="form-check-label" for="cpref-3">Example cookie</label>
+                                            <p class="subtle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </div>
+                                    </div>
+                                    <p>Please consult our <a href="privacy_policy.html" aria-label="open privacy policy page">Privacy Policy</a> for more info.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Cookies modal end -->
+                </div><!-- Notification bar end -->
+            </div>
+        </div>
+
+        <!-- /// HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="dots-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="uppercase">Ghost <br> Modem</h1>
+                        <a href="https://www.youtube.com/watch?v=JaWnEbAsFmc" class="glightbox trailer-play-button" aria-label="Watch the Ghost Modem trailer"> <!-- Your video goes here -->
+                            <img src="images/icons/play-button.svg" class="img-fluid" alt="Play Video">
+                        </a>
+                        <!-- // Store buttons for PC & Console //-->
+                        <ul class="platforms pc">
+                            <li>
+                                <a href="#" id="steam" class="platform-button" aria-label="Buy on Steam">
+                                    <span class="visually-hidden">Buy on Steam</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="xbox" class="platform-button" aria-label="Buy on Xbox">
+                                    <span class="visually-hidden">Buy on Xbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="playstation" class="platform-button" aria-label="Buy on Playstation">
+                                    <span class="visually-hidden">Buy on Playstation</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- // Store buttons for mobile 
+                        <ul class="platforms mobile">
+                            <li>
+                                <a href="#">
+                                    <img src="images/icons/google-play-badge.svg" class="img-fluid" alt="Get it on Google Play">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/icons/app-store-badge.svg" class="img-fluid" alt="Get it on Apple Store">
+                                </a>
+                            </li>
+                        </ul>
+                        //-->
+
+                        <!-- Social Media Links -->
+                        <ul class="socials">
+                            <li>
+                                <a href="#" aria-label="Visit the Ghost Modem Facebook page">
+                                    <i class="fab fa-facebook fa-lg"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Visit the Ghost Modem X (Twitter) page">
+                                    <i class="fab fa-x-twitter fa-lg">
+
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Check out Ghost Modem on Youtube">
+                                    <i class="fab fa-youtube fa-lg"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Join the Ghost Modem Discord">
+                                    <i class="fab fa-discord fa-lg"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Hero section end -->
+
+        <!-- /// FEATURES SECTION -->
+        <section id="features" class="features-section">
+            <div id="features-carousel" class="carousel carousel-fade" data-bs-ride="carousel" aria-label="Features carousel">
+                <div class="carousel-inner" aria-live="polite">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#features-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#features-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#features-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#features-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+
+                    <!-- Feature slide -->
+                    <div class="carousel-item active">
+                        <img src="images/feature-bg.webp" class="img-fluid" alt="game feature backdrop">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-5 features-section-text">
+                                    <h2 class="uppercase"><span class="highlight">Rich</span> Story</h2>
+                                    <p>Get immersed in the world of Takatoro city. <br>Meet people from all walks of life and uncover dark secrets.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- slide end -->
+
+                    <!-- Feature slide -->
+                    <div class="carousel-item">
+                        <img src="images/feature-bg.webp" class="img-fluid" alt="game feature backdrop">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-5 features-section-text">
+                                    <h2 class="uppercase"><span class="highlight">Expansive</span> World</h2>
+                                    <p>From the slums of the crime syndicate turfs to the towering hights of the corporation headquarters Takatoro city is yours to explore.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- slide end -->
+
+                    <!-- Feature slide -->
+                    <div class="carousel-item">
+                        <img src="images/feature-bg.webp" class="img-fluid" alt="game feature backdrop">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-5 features-section-text">
+                                    <h2 class="uppercase"><span class="highlight">Deep</span> Characters</span></h2>
+                                    <p>Meet a colorful cast of characters on your adventures, from the noble samurai to the dangerous cyber yakuza.
+                                        Make friends and enemies on your journey.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- slide end -->
+
+                    <!-- Feature slide -->
+                    <div class="carousel-item">
+                        <img src="images/feature-bg.webp" class="img-fluid" alt=" ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-5 features-section-text">
+                                    <h2 class="uppercase"><span class="highlight">Engaging</span> Combat</span></h2>
+                                    <p>Engage in thrilling combat with the shady underworld of the city. <br>Build your characters and grow your power.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- slide end -->
+                </div>
+                <div class="carousel-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section><!-- Features section end -->
+
+        <!-- /// CHARACTERS SECTION -->
+        <section id="characters" class="characters-section">
+            <div class="dots-overlay"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!-- Characters description text. The text here changes based on the data-text and data-name attributes below -->
+                        <div class="text-box">
+                            <h2 class="uppercase">The <span class="highlight" id="titleSpan">Samurai</span></h2>
+                            <p id="descriptionText" class="fade-text">Select a character to learn more</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <!-- Characters carousel. The text on the page is set by the data-name and data-text attributes below -->
+                        <div class="splide characters-carousel" id="characterCarousel" aria-label="Characters carousel">
+                            <div class="splide__track" aria-live="polite">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="images/char.webp" alt="Samurai Warrior" class="character" data-name="SAMURAI" data-text="A formidable warrior fighting for honor and friends">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="images/char.webp" alt="Samurai Master" class="character" data-name="WARRIOR" data-text="An ancient master upgraded with cyber tech. The combination of technique and tech make him a formidable warrior">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="images/char.webp" alt="Geisha" class="character" data-name="GEISHA" data-text="A mysterious and elegant fighter. If she cannot seduce you with her charm she will kill you with her abilities.">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="images/char.webp" alt="Cyber Ninja" class="character" data-name="CYBER YAKUZA" data-text="A typical cyber yakuza punk, they are officially called associates.">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- carousel end -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- Characters section end -->
+
+        <!-- /// WORLD SECTION -->
+        <section id="world" class="world-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- World zone card -->
+                    <div class="col-lg-3 g-0 text-center">
+                        <div class="zone">
+                            <h2 class="uppercase">Outskirts</h2>
+                            <p>The Outskirts of Takatoro City are a barren an treacherous place where nomads, rebels gangs and city rejects try to make a hard living outside city limits.
+                            </p>
+                            <button type="button" class="lightbox-button capitalized" data-target="zone-1">Explore the Outskirts</button>
+                            <img src="images/zone-bg.webp" class="img-fluid" alt=""><!-- zone card background -->
+                        </div>
+
+                        <!-- world zone images -->
+                        <a href="images/zone-img.webp" data-title="City Outskirts" data-gallery="zone-1" class="glightbox">
+                            <span class="visually-hidden">The city outskirts with the city in the distance and the sun behind it</span>
+                        </a>
+                        <a href="images/zone-img.webp" data-title="Pyramid City" data-gallery="zone-1" class="glightbox">
+                            <span class="visually-hidden">A giant futuristic pyramid reaches the clouds</span>
+                        </a>
+                    </div><!-- card end -->
+
+                    <!-- World zone card -->
+                    <div class="col-lg-3 g-0 text-center">
+                        <div class="zone">
+                            <h2 class="uppercase">Black Dragons</h2>
+                            <p>The Black Dragons are the oldest and most powerful Yakuza clan in Takatoro City, a shadowy group that can facilitate anything for the right price.
+                            </p>
+                            <button type="button" class="lightbox-button capitalized" data-target="zone-2">Meet the Dragons</button>
+                            <img src="images/zone-bg.webp" class="img-fluid" alt=""><!-- zone card background -->
+                        </div>
+
+                        <!-- world zone images -->
+                        <a href="images/zone-img.webp" data-title="The Samurai" data-gallery="zone-2" class="glightbox">
+                            <span class="visually-hidden">A futuristic looking samurai</span>
+                        </a>
+                        <a href="images/zone-img.webp" data-title="The Master" data-gallery="zone-2" class="glightbox">
+                            <span class="visually-hidden">An old samurai master with a robot arm</span>
+                        </a>
+                    </div><!-- card end -->
+
+                    <!-- World zone card -->
+                    <div class="col-lg-3 g-0 text-center">
+                        <div class="zone">
+                            <h2 class="uppercase">Downtown</h2>
+                            <p>The beating heart of the city, painted by an amalgam of faces from corpo suits to stim junkies, a canvas for greed, hustle, struggle and hope...
+                            </p>
+                            <button type="button" class="lightbox-button capitalized" data-target="zone-3">Explore the City</button>
+                            <img src="images/zone-bg.webp" class="img-fluid" alt=""><!-- zone card background -->
+                        </div>
+
+                        <!-- world zone images -->
+                        <a href="images/zone-img.webp" data-title="Downtown Spaceport" data-gallery="zone-3" class="glightbox">
+                            <span class="visually-hidden">A busy spaceport</span>
+                        </a>
+                        <a href="images/zone-img.webp" data-title="Downtown Action" data-gallery="zone-3" class="glightbox">
+                            <span class="visually-hidden">A car being chased and shot at by a flying drone</span>
+                        </a>
+                    </div><!-- card end -->
+
+                    <!-- World zone card -->
+                    <div class="col-lg-3 g-0 text-center">
+                        <div class="zone">
+                            <h2 class="uppercase">Yakuza HQ</h2>
+                            <p>The Yakuza like to put up a front as a legitimate business, they even had their HQ built in the business plaza downtown, but no one is under any illusion about what goes on behind closed doors...
+                            </p>
+                            <button type="button" class="lightbox-button capitalized" data-target="zone-4">Peak Inside</button>
+                            <img src="images/zone-bg.webp" class="img-fluid" alt=""><!-- zone card background -->
+                        </div>
+
+                        <!-- world zone images -->
+                        <a href="images/zone-img.webp" data-title="Visions of Death" data-gallery="zone-4" class="glightbox">
+                            <span class="visually-hidden">A witch holding an orb unleashing her powers</span>
+                        </a>
+                        <a href="images/zone-img.webp" data-title="Visions of Destruction" data-gallery="zone-4" class="glightbox">
+                            <span class="visually-hidden">A big horned demon with red eyes</span>
+                        </a>
+                    </div><!-- card end -->
+                </div>
+            </div>
+        </section><!-- World section end -->
+
+        <!-- /// FAQ & NEWSLETTER SECTION -->
+        <section class="newsletter-section">
+            <div class="dots-overlay"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 mx-auto">
+                        <h2 class="uppercase">FAQ</h2>
+                        <div class="accordion accordion-flush" id="accordionExample">
+
+                            <!-- FAQ Question -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    What is Ghost Modem about?
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Ghost Modem is an action adventure RPG.</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Aenean porta sollicitudin dignissim. Sed euismod faucibus consequat. Nam egestas et metus ut suscipit. 
+                                    Phasellus sit amet tellus feugiat, dignissim sapien vel, imperdiet augue. Morbi eget ultrices diam.
+                                </div>
+                                </div>
+                            </div><!-- question end -->
+
+                            <!-- FAQ Question -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    When will Ghost Modem be available?
+                                </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Ghost Modem will come out in 2025.</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Aenean porta sollicitudin dignissim. Sed euismod faucibus consequat. Nam egestas et metus ut suscipit. 
+                                    Phasellus sit amet tellus feugiat, dignissim sapien vel, imperdiet augue. Morbi eget ultrices diam.
+                                </div>
+                                </div>
+                            </div><!-- question end -->
+
+                            <!-- FAQ Question -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What platfroms will Ghost Modem be on?
+                                </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Ghost Modem will be availavble on all major platforms.</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Aenean porta sollicitudin dignissim. Sed euismod faucibus consequat. Nam egestas et metus ut suscipit. 
+                                    Phasellus sit amet tellus feugiat, dignissim sapien vel, imperdiet augue. Morbi eget ultrices diam.
+                                </div>
+                                </div>
+                            </div><!-- question end -->
+
+                            <!-- FAQ Question -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What are the system requirements for Ghost Modem?
+                                </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p class="strong">Minimum System Requirements</p>
+                                    <ul>
+                                        <li><b>CPU:</b> Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940</li>
+                                        <li><b>RAM:</b> 6 GB</li>
+                                        <li><b>OS:</b> 64-bit Windows 7 or 64-bit Windows 8 (8.1)</li>
+                                        <li><b>VIDEO CARD:</b> Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870</li>
+                                        <li><b>FREE</b> DISK SPACE: 40 GB</li>
+                                    </ul>
+                                    <br>
+                                    <p class="strong">Recommended System Requirements</p>
+                                    <ul>
+                                        <li><b>CPU:</b> Intel CPU Core i7 3770 3.4 GHz / AMD CPU AMD FX-8350 4 GHz</li>
+                                        <li><b>RAM:</b> 8 GB</li>
+                                        <li><b>OS:</b> 64-bit Windows 7 or 64-bit Windows 8 (8.1)</li>
+                                        <li><b>VIDEO CARD:</b> Nvidia GPU GeForce GTX 770 / AMD GPU Radeon R9 290</li>
+                                        <li><b>FREE</b> DISK SPACE: 40 GB</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div><!-- question end -->
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mx-auto">
+                        <div class="newsletter-container">
+                            <h2 class="heading uppercase">Newsletter</h2>
+                            <p class="sub-heading">Join the newsletter to get the latest updates on the game.</p>
+                            <ul class="newsletter-perks">
+                                <li><span class="highlight">+</span> Get special discounts</li>
+                                <li><span class="highlight">+</span> Get early access to our games</li>
+                                <li><span class="highlight">+</span> Sign up for play tests</li>
+                                <li><span class="highlight">+</span> Get special goodie packs</li>
+                            </ul>
+                            <form id="newsletterForm" method="POST">
+                                <!-- Email field -->
+                                <input type="email" name="EMAIL" id="newsletter" placeholder="Your email here" required size="35" autocomplete="on" data-error="Email is required" aria-label="email field">
+
+                                <!-- GDPR consent checkboxes -->
+                                <label>
+                                    <input type="checkbox" name="gdpr[email]" value="Y" required>
+                                    I agree to receive newsletters and accept the <a href="privacy_policy.html">Privacy Policy</a>.
+                                </label>
+
+                                <!-- Privacy info -->
+                                <p>
+                                    You can unsubscribe at any time using the link in our emails.<br>  
+                                    For details on our privacy practices, please read our  
+                                    <a href="privacy_policy.html" target="_blank" class="highlight">Privacy Policy</a>.
+                                </p>
+
+                                <!-- Submit -->
+                                <button type="submit" class="uppercase newsletter-button" aria-label="Subscribe to newsletter">Subscribe</button>
+
+                                <!-- Response -->
+                                <div id="newsletter-msg" class="mt-2 text-sm"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- FAQ & Newsletter section end -->
+
+        <!-- /// CTA SECTION -->
+        <section id="cta" class="cta-section">
+            <div class="dots-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="images/cta-img.webp" id="cta-image" class="img-fluid" alt="ghost modem game art"><!-- cta image -->
+                    </div>
+                    <div class="col-lg-6 cta-container text-center">
+                        <h1 class="uppercase">Join<br>The<br>Fight</h1>
+                        <!-- // Store buttons for PC & Console //-->
+                        <ul class="platforms pc">
+                            <li>
+                                <a href="#" id="steam" class="platform-button" aria-label="Buy on Steam">
+                                    <span class="visually-hidden">Buy on Steam</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="xbox" class="platform-button" aria-label="Buy on Xbox">
+                                    <span class="visually-hidden">Buy on Xbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="playstation" class="platform-button" aria-label="Buy on Playstation">
+                                    <span class="visually-hidden">Buy on Playstation</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- // Store buttons for mobile 
+                        <ul class="platforms mobile">
+                            <li>
+                                <a href="#">
+                                    <img src="images/icons/google-play-badge.svg" class="img-fluid" alt="Get it on Google Play">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/icons/app-store-badge.svg" class="img-fluid" alt="Get it on Apple Store">
+                                </a>
+                            </li>
+                        </ul>
+                        //-->
+                        <p class="clickable" data-bs-toggle="modal" data-bs-target="#system-req-modal" aria-label="View System Requirements">System Requirements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- System Requirements Modal -->
+        <div class="modal fade" id="system-req-modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Minimum System Requirements</h4>
+                        <ul>
+                            <li><b class="uppercase highlight">cpu</b>: Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940</li>
+                            <li><b class="uppercase highlight">ram</b>: 6 GB</li>
+                            <li><b class="uppercase highlight">os</b>: 64-bit Windows 7 or 64-bit Windows 8 (8.1)</li>
+                            <li><b class="uppercase highlight">video card</b>: Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870</li>
+                            <li><b class="uppercase highlight">disk space</b>: 40 GB</li>
+                        </ul>
+                        <br>
+                        <h4>Recommended System Requirements</h4>
+                        <ul>
+                            <li><b class="uppercase highlight">cpu</b>: Intel CPU Core i7 3770 3.4 GHz / AMD CPU AMD FX-8350 4 GHz</li>
+                            <li><b class="uppercase highlight">ram</b>: 8 GB</li>
+                            <li><b class="uppercase highlight">os</b>: 64-bit Windows 7 or 64-bit Windows 8 (8.1)</li>
+                            <li><b class="uppercase highlight">video card</b>: Nvidia GPU GeForce GTX 770 / AMD GPU Radeon R9 290</li>
+                            <li><b class="uppercase highlight">disk space</b>: DISK SPACE: 40 GB</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /// FOOTER /// -->
+        <footer id="main-footer">
+            <div class="footer"> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="footer-left-side">
+                                <a href="#"><img src="images/brand.webp" class="img-fluid company-logo" alt="Our company logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Social Media Links -->
+                            <ul class="socials">
+                                <li>
+                                    <a href="#" aria-label="Visit us on Facebook">
+                                        <i class="fab fa-facebook fa-2x"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Visit us on X (Twitter)">
+                                        <i class="fab fa-x-twitter fa-2x"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Visit us on Instagram">
+                                        <i class="fab fa-instagram fa-2x"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Check out our Youtube channel">
+                                        <i class="fab fa-youtube fa-2x"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Join our Discord">
+                                        <i class="fab fa-discord fa-2x"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="footer-links text-center">
+                                <ul>
+                                    <li><a href="privacy_policy.html">Privacy &amp; Cookie Policy</a></li>
+                                    <li><a href="terms_and_conditions.html">Terms &amp; Conditions</a></li>
+                                    <li><button type="button" class="capitalized" data-bs-toggle="modal" data-bs-target="#policy-modal">Manage Cookies</button></li>
+                                </ul>
+                                <p id="copyright">&copy; STRIDER <span id="year"> </span> - Game Studio Template by <a href="#">Atypicalthemes</a></p><!-- Copyright Text -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="footer-right-side">
+                                <a href="#"><img src="images/ESRB-M.svg" class="img-fluid age-rating" alt="ESRB rated M"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer><!-- Footer End -->
+
+        <!-- //// SCRIPTS //// -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/glightbox.min.js" defer></script>
+        <script src="https://kit.fontawesome.com/71697cf5e4.js" crossorigin="anonymous" defer></script>
+        <script src="js/splide.min.js" defer></script>
+        <script src="js/single.js" defer></script>
+        <script src="js/newsletter-form.js" defer></script>
+    </body>
+</html>
